@@ -1,0 +1,17 @@
+spring:
+  kafka:
+    bootstrap-servers: ${bootstrap}
+    properties: 
+       #schema.registry.url: 
+       #processing.guarantee: exactly_once_v2
+       #         auto.register.schemas: true
+      use.latest.version: true
+      security:
+         protocol: SASL_PLAINTEXT
+      sasl:
+         mechanism: PLAIN
+         jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="client" password="client-secret";
+client:
+  send-topics: rrdemo-client
+  reply-topics: rrdemo-client-reply
+  consumer-group: rrdemo-client-group
