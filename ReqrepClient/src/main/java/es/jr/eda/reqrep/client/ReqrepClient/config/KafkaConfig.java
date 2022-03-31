@@ -20,7 +20,7 @@ public class KafkaConfig {
     @Value("${client.consumer-group}")
     private String CONSUMER_GROUPS;
 
-    @Bean //register and configure replying kafka template
+    @Bean
     public ReplyingKafkaTemplate<String, Object, Object> replyingTemplate(
             ProducerFactory<String, Object> pf,
             ConcurrentMessageListenerContainer<String, Object> repliesContainer) {

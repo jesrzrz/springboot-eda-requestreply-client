@@ -16,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class KafkaService {
+	
     @Autowired
     private ReplyingKafkaTemplate<String, Object, Object> template;
     @Value("${client.send-topics}")
